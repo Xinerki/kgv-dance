@@ -1,9 +1,9 @@
 
-function DisplayHelpText(helpText, time)
+function DisplayHelpText(string1, string2, string3, time)
     BeginTextCommandDisplayHelp("THREESTRINGS")
-    AddTextComponentSubstringWebsite(subtitle:sub(1,74))
-    AddTextComponentSubstringWebsite(subtitle:sub(75,148))
-    AddTextComponentSubstringWebsite(subtitle:sub(149,222))
+    AddTextComponentSubstringWebsite(string1)
+    AddTextComponentSubstringWebsite(string2)
+    AddTextComponentSubstringWebsite(string3)
 	EndTextCommandDisplayHelp(0, 0, 1, time or -1)
 end
 
@@ -26,7 +26,7 @@ RegisterCommand("dance", function()
 			return
 		end
 		
-		DisplayHelpText
+		DisplayHelpText("Press ~INPUTGROUP_MOVE~ to change direction.", "~n~Press ~INPUT_SPRINT~ and ~INPUT_JUMP~ to change intensity.", "~n~Press ~INPUT_ENTER~ to exit.", 5000)
 		
 		local ped = PlayerPedId()
 		
