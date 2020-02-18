@@ -56,7 +56,7 @@ RegisterCommand("dance", function()
 		
 		currentIntensity = 1
 		
-		ShakeGameplayCam("ROAD_VIBRATION_SHAKE", 0.5)
+		ShakeGameplayCam("CLUB_DANCE_SHAKE", 0.5)
 		SetGameplayCamShakeAmplitude(shakeIntensity[currentIntensity])
 		
 		-- TaskPlayAnim(ped, danceVar, "intro", 8.0, -8, -1, 0, 0, 0, 0, 0)
