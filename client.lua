@@ -31,7 +31,7 @@ RegisterCommand("dance", function()
 		local ped = PlayerPedId()
 		
 		local gender = "male"
-		if GetEntityModel(ped) == `mp_f_freemode_01` then gender = "female" end
+		if IsPedMale(PlayerPedId()) ~= 1 then gender = "female" end
 		
 		danceVar = "anim@amb@nightclub@mini@dance@dance_solo@"..gender.."@var_".. vars[math.random(1, 2)] .."@"
 		
