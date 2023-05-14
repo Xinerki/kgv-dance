@@ -119,12 +119,12 @@ RegisterCommand("dance", function()
 			
 			-- SPIN RIGHT
 			if IsControlPressed(0, 153) then
-				SetEntityRotation(ped, x, y, z-0.5, 0, true)
+				SetEntityRotation(ped, x, y, z - (50.0 * GetFrameTime()), 0, true)
 			end
 			
 			-- SPIN LEFT
 			if IsControlPressed(0, 152) then
-				SetEntityRotation(ped, x, y, z+0.5, 0, true)
+				SetEntityRotation(ped, x, y, z + (50.0 * GetFrameTime()), 0, true)
 			end
 			
 			
