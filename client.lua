@@ -10,7 +10,9 @@ end
 intensity = {"low", "med", "high"}
 direction = {"left", "center", "up"}
 height = {"up", "", "down"}
+-- vars = {"a", "b", "d", "e", "f", "h", "j", "k", "l", "m"}
 vars = {"a", "b"}
+varsPerico = {"beach_boxing", "jumper", "sand_trip", "shuffle", "techno_karate", "techno_monkey"}
 shakeIntensity = {0.25, 0.5, 1.0}
 
 currentIntensity = 1
@@ -33,7 +35,15 @@ RegisterCommand("dance", function()
 		local gender = "male"
 		if IsPedMale(PlayerPedId()) ~= 1 then gender = "female" end
 		
-		danceVar = "anim@amb@nightclub@mini@dance@dance_solo@"..gender.."@var_".. vars[math.random(1, 2)] .."@"
+		if math.random(1,2) == 1 then
+			danceVar = "anim@amb@nightclub@mini@dance@dance_solo@"..gender.."@var_".. vars[math.random(1, 2)] .."@"
+		else
+			danceVar = "anim@amb@nightclub@mini@dance@dance_solo@"..varsPerico[math.random(1, 6)].."@"
+		end
+		
+		-- danceVar = "anim@amb@nightclub@mini@dance@dance_paired@dance_"..vars[math.random(1, 10)].."@"
+		-- danceVar = "anim@amb@nightclub@mini@dance@dance_solo@"..vars[math.random(1, 6)].."@"
+		-- anim@amb@nightclub@mini@dance@dance_paired@dance_a@
 		
 		if not HasAnimDictLoaded(danceVar) then
 			BeginTextCommandBusyspinnerOn("STRING")
